@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Form</h1>
+
+    <form action="/updatestudent" method="post">
+      <input
+        style="display: none"
+        name="idno"
+        value="{{ student['idno']}}"
+        placeholder="idno"
+      />
+      <input
+        name="lastname"
+        value="{{ student['lastname']}}"
+        placeholder="lastname"
+      />
+      <input
+        name="firstname"
+        value="{{ student['firstname']}}"
+        placeholder="firstname"
+      />
+      <input
+        name="course"
+        value="{{ student['course']}}"
+        placeholder="course"
+      />
+      <input name="level" value="{{ student['level']}}" placeholder="level" />
+      <button type="submit">SAVE</button>
+    </form>
+  </body>
+</html>

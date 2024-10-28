@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    <h1>Form</h1>
+
+    <form action="/savestudent" method="post">
+      <input name="idno" placeholder="idno" />
+      <input name="lastname" placeholder="lastname" />
+      <input name="firstname" placeholder="firstname" />
+      <input name="course" placeholder="course" />
+      <input name="level" placeholder="level" />
+      <button type="submit">SAVE</button>
+    </form>
+
+    <p>All Students</p>
+
+    {% for student in studentlist %}
+    <div style="border: 1px solid black; padding: 5px">
+      <p>
+        Name: {{ student.lastname }}, {{ student.firstname }} ({{ student.idno
+        }})
+      </p>
+      <p>Course: {{ student.course }}</p>
+      <p>Level: {{ student.level }}</p>
+      <button onclick="location.href='/delete/{{student.idno}}'">DELETE</button>
+      <button onclick="location.href='/update/{{student.idno}}'">EDIT</button>
+    </div>
+
+    {% endfor %}
+  </body>
+</html>
